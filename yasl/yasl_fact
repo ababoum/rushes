@@ -1,0 +1,20 @@
+#!yasl_linux
+
+2 < ? ("Error: insufficient arguments\n" print exit) : !
+
+%][ // explode 1st arg to analyze it
+#("0" %< ? ("Error\n" print exit) : ! "9" %> ? ("Error\n" print exit) : ! !)
+eval
+0 %== ? (1 print "\n" print 0 exit) : !
+1 %== ? (1 print "\n" print 0 exit) : !
+21 %>= ? ("Error: input value will overload the factorial\n" print exit) : !
+0:=:1
+=
+1 -
+#(
+	1:1
+	1:-:1
+	1:=:0
+	*
+)
+print "\n" print

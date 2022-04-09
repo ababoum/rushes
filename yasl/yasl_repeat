@@ -1,0 +1,18 @@
+#!yasl_linux
+
+3 < ? ("Error: insufficient arguments\n" print exit) : !
+
+%][ // explode 1st arg to analyze it
+#("0" %< ? ("Error\n" print exit) : ! "9" %> ? ("Error\n" print exit) : ! !)
+eval
+0:=:1
+0:!
+#
+#(
+	1:=:0
+	1:1
+	1:+:1
+	#(0:=:0 print)
+	0: "\n" print
+	!
+)

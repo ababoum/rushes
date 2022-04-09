@@ -1,0 +1,11 @@
+#!yasl_linux
+
+3 != ? ("Error: incorrect number of arguments\n" print exit) : !
+
+0:=:1
+!
+][:2 // explode the string into characters
+2:#(
+	2:=:0
+	2:!
+) // put back all characters in a original stack in the right order
