@@ -1,5 +1,14 @@
 #!yasl_linux
 
+// check if length is zero
+
+// stack 0 is string
+// stack 1 is separator char
+// stack 2 is new line verificator
+
+{1 2:=:0 == ? ("\n" print 0:2) : ()} check_nl
+{1:2} enable_nl
+
 3 != ? ("Error: incorrect number of arguments\n" print exit) : !
 
 0:=:1
@@ -9,3 +18,12 @@
 	2:=:0
 	2:!
 ) // put back all characters in a original stack in the right order
+
+0:2
+
+#
+#(
+	=
+	1:=:0
+	!= ? (print enable_nl) : (! check_nl)
+)

@@ -1,0 +1,11 @@
+#!yasl_linux
+
+// check if read length is greater than 0
+// signal ctrl D
+
+! !
+1
+%@ (
+	read
+	? (eval) : (exit)
+)
