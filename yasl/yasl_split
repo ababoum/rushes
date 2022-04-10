@@ -27,3 +27,4 @@
 	1:=:0
 	!= ? (print enable_nl) : (! check_nl)
 )
+check_nl
