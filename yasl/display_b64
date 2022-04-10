@@ -60,12 +60,13 @@ read // careful, max capacity is 63000 approx.
 			// with the list of int 0 to 255 
 
 
+// stack 7 to control loop on stack 5
 {
-	5:#:5
-	3:5
-	5:/:5
-	5:=:5 5:print "\n" print
-	5:#(
+	// 5:#:5
+	// 3:5
+	// 5:/:5
+	// 5:=:7 5:!
+	// 7:%@(
 		"\e[48;2;":6
 		5:=:6 5:!
 		";":6
@@ -76,9 +77,24 @@ read // careful, max capacity is 63000 approx.
 		5:=:6 5:!
 		"m \e[0m":6
 		6:+:6 6:+:6
-		6:print "\n" print
+		// 1:7 7:-:7
+		6:print
+	// )
+	// 7:!
+} three_ints_to_pixel // takes ints from stack 5 and populates stack 6 with pixels 
+
+// stack 8 as control for pix to square
+{
+	2:8 // copy the square to stack 8
+	8:=:8
+	8:#(
+		8:=:8
+		8:#(
+			three_ints_to_pixel
+		)
+		0:"\n" 0:print
 	)
-} int_to_pixels // takes ints from stack 5 and populates stack 6 with pixels 
+} pixels_to_square
 
 
 # #! // empty stack 0
@@ -86,13 +102,30 @@ read // careful, max capacity is 63000 approx.
 "11111111"
 "00000000"
 "00000000"
-// "11111111"
-// "00000000"
-// "00000000"
-// bin_to_dec
-// bin_to_dec
-// bin_to_dec
+//red
+"11111111"
+"00000000"
+"00000000"
+//red
+"00000000"
+"00000000"
+"11111111"
+// blue
+"00000000"
+"00000000"
+"11111111"
+// blue
+(bin_to_dec
 bin_to_dec
 bin_to_dec
 bin_to_dec
-int_to_pixels
+bin_to_dec
+bin_to_dec
+bin_to_dec
+bin_to_dec
+bin_to_dec
+bin_to_dec
+bin_to_dec
+bin_to_dec)
+// int_to_pixels
+pixels_to_square
