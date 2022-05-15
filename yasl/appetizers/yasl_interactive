@@ -1,0 +1,12 @@
+#!yasl_linux
+
+// check if read length is greater than 0
+// signal ctrl D
+
+! ! // drop arguments
+1:1
+1:%@ (
+	read:0
+	0:%? (0:!) : ("^D\n" print exit)
+	"":0 0:%==:0 0:? (0:!) : (0:! 0:eval:0)
+)
