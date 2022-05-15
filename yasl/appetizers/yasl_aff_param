@@ -1,7 +1,0 @@
-#!yasl_linux
-
-! !
-# 0 %== ? exit : !
-#(
-	print "\n" print
-)

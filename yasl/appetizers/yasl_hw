@@ -1,6 +1,0 @@
-#!yasl_linux
-
-#! // drop arguments
-
-"Hello world\n"
-print
